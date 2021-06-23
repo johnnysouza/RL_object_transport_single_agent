@@ -31,6 +31,9 @@ class GridWorld:
         self.actions = (Action.UP, Action.DOWN, Action.RIGHT, Action.LEFT, Action.STAY)
         
     def get_reward(self, object_taked: bool = False):
+        if self.is_goal_state():
+            return 1
+
         if object_taked:
             return 0
 
